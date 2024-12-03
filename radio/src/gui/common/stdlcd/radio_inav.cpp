@@ -335,12 +335,10 @@ static void inavDraw() {
 
 void menuRadioInavLite(event_t event) {
   if (event != 0xff) {
-    globalData.cToolRunning = 1;
     lcdClear(); // when run as telemetry screen clear is done elsewhere
   }
 
   if (event == EVT_KEY_LONG(KEY_EXIT)) { // exit on long press CANCEL
-    globalData.cToolRunning = 0;
     popMenu();
   } else if (event == EVT_KEY_LONG(KEY_ENTER)) { // set home on long press OK
     inavSetHome();

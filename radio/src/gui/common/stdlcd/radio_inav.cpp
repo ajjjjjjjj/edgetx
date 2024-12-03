@@ -1,4 +1,4 @@
-#include "opentx.h"
+#include "edgetx.h"
 
 #define INAVLITE_AFHDS2A
 #define INAVLITE_CRSF

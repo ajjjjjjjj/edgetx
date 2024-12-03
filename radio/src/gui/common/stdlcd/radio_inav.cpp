@@ -159,36 +159,36 @@ static void inavDraw() {
 #if defined(INAVLITE_CRSF)
       TelemetrySensor & sensor = g_model.telemetrySensors[i];
 
-      if (strstr(sensor.label, STR_SENSOR__RX_RSSI1)) { // RSSI
+      if (strstr(sensor.label, STR_SENSOR_RX_RSSI1)) { // RSSI
         rssi = telemetryItem.value;
-      } else if (strstr(sensor.label, STR_SENSOR__ALT)) { // Altitude
+      } else if (strstr(sensor.label, STR_SENSOR_ALT)) { // Altitude
         alt = telemetryItem.value;
-      } else if (strstr(sensor.label, STR_SENSOR__GPSALT)) { // GPS altitude
+      } else if (strstr(sensor.label, STR_SENSOR_GPSALT)) { // GPS altitude
         galt = telemetryItem.value;
-      } else if (strstr(sensor.label, STR_SENSOR__VSPD)) { // VSpd
+      } else if (strstr(sensor.label, STR_SENSOR_VSPD)) { // VSpd
         vspd = telemetryItem.value;
-      } else if (strstr(sensor.label, STR_SENSOR__BATT_PERCENT)) { // batt percent
+      } else if (strstr(sensor.label, STR_SENSOR_BATT_PERCENT)) { // batt percent
         drawValueWithUnit(INAV_BATTP_X, INAV_BATTP_Y, telemetryItem.value, sensor.unit, DBLSIZE | RIGHT);
-      } else if (strstr(sensor.label, STR_SENSOR__A4)) { // average cell value
+      } else if (strstr(sensor.label, STR_SENSOR_A4)) { // average cell value
         drawValueWithUnit(INAV_CELLV_X, INAV_CELLV_Y, telemetryItem.value, sensor.unit, PREC2 | DBLSIZE | RIGHT);
-      } else if (strstr(sensor.label, STR_SENSOR__BATT)) { // Voltage
+      } else if (strstr(sensor.label, STR_SENSOR_BATT)) { // Voltage
         rxBatt = telemetryItem.value;
-      } else if (strstr(sensor.label, STR_SENSOR__CURR)) { // Current
+      } else if (strstr(sensor.label, STR_SENSOR_CURR)) { // Current
         current = telemetryItem.value;
-      } else if (strstr(sensor.label, STR_SENSOR__FLIGHT_MODE)) { // flight mode
+      } else if (strstr(sensor.label, STR_SENSOR_FLIGHT_MODE)) { // flight mode
         lcdDrawSizedText(INAV_FM_X, INAV_FM_Y, telemetryItem.text, sizeof(telemetryItem.text), CENTERED);
       // } else if (sensor.id == TEMP2_ID) { // GPS lock status, accuracy, home reset trigger, and number of satellites.
 
-      } else if (strstr(sensor.label, STR_SENSOR__DIST) || strstr(sensor.label, "0420")) { // Distance, "0420" for INAV and Betaflight
+      } else if (strstr(sensor.label, STR_SENSOR_DIST) || strstr(sensor.label, "0420")) { // Distance, "0420" for INAV and Betaflight
         dist = telemetryItem.value;
-      } else if (strstr(sensor.label, STR_SENSOR__HDG)) { // Heading
+      } else if (strstr(sensor.label, STR_SENSOR_HDG)) { // Heading
         // inavData.heading = ((telemetryItem.value / (10 ^ sensor.prec)) * 100) / 1125;
         inavData.heading = convertTelemetryValue(telemetryItem.value, sensor.unit, sensor.prec, sensor.unit, 2) / 1125;
-      } else if (strstr(sensor.label, STR_SENSOR__GSPD)) { // GPS Speed
+      } else if (strstr(sensor.label, STR_SENSOR_GSPD)) { // GPS Speed
         speed = telemetryItem.value;
-      } else if (strstr(sensor.label, STR_SENSOR__SATELLITES)) { // GPS Sats
+      } else if (strstr(sensor.label, STR_SENSOR_SATELLITES)) { // GPS Sats
         sats = telemetryItem.value;
-      } else if (strstr(sensor.label, STR_SENSOR__GPS)) { // GPS coords
+      } else if (strstr(sensor.label, STR_SENSOR_GPS)) { // GPS coords
         inavData.currentLat = telemetryItem.gps.longitude;
         inavData.currentLon = telemetryItem.gps.latitude;
       }
